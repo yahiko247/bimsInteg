@@ -1,3 +1,4 @@
+import 'package:bims/components/pages/loginpage.dart';
 import 'package:bims/components/registerbut.dart';
 import 'package:bims/components/textfield.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,13 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 230),
+                const Text(
+                  'B I M S',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w100,
+                      fontSize: 70),
+                ),
                 MyTextField(
                     controller: emailController,
                     icon: Icons.person,
@@ -42,7 +50,64 @@ class _RegisterPageState extends State<RegisterPage> {
                     hinText: 'Confirm',
                     obscuretext: true),
                 const SizedBox(height: 10),
-                RegisterButton(onTap: () {})
+                RegisterButton(onTap: () {}),
+                const SizedBox(height: 20),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 100,
+                        child: const Divider(
+                          color: Colors.white,
+                          thickness: 2,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      const Text(
+                        'Create With',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      const SizedBox(width: 20),
+                      Container(
+                        width: 100,
+                        child: const Divider(
+                          color: Colors.white,
+                          thickness: 2,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                    child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.facebook,
+                      color: Color.fromRGBO(16, 170, 140, 1),
+                    ),
+                    SizedBox(width: 50),
+                    Icon(
+                      Icons.email,
+                      color: Color.fromRGBO(16, 170, 140, 1),
+                    )
+                  ],
+                )),
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                  },
+                  child: const Text(
+                    'Sign up',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
               ],
             ),
           ))
