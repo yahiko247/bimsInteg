@@ -1,4 +1,5 @@
 import 'package:bims/components/myButton.dart';
+import 'package:bims/components/pages/nestedpages/homepage.dart';
 import 'package:bims/components/pages/registerpage.dart';
 import 'package:bims/components/textfield.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +60,9 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         const SizedBox(width: 30),
                         MyButton(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                          },
                         ),
                       ]),
                 ),
